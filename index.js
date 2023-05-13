@@ -1,5 +1,5 @@
 const easymidi = require("easymidi");
-const http = require("http");
+// const http = require("http");
 const Cam = require("onvif").Cam;
 
 let presetArray = [];
@@ -73,6 +73,8 @@ const speed = 1;
 let i;
 
 input.on("noteoff", function (msg) {
+  console.log("NoteOFF:", msg)
+  
   i && clearInterval(i);
   i !== null && cam.stop({}, console.log);
 });
