@@ -73,8 +73,8 @@ const speed = 1;
 let i;
 
 input.on("noteoff", function (msg) {
-  console.log("NoteOFF:", msg)
-  
+  console.log("NoteOFF:", msg, '\n', 'interval:', i)
+
   i && clearInterval(i);
   i !== null && cam.stop({}, console.log);
 });
